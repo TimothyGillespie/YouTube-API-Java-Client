@@ -1,6 +1,7 @@
 package eu.gillespie.youtubeapi.model.snippet;
 
 import eu.gillespie.youtubeapi.model.enums.ActivityType;
+import eu.gillespie.youtubeapi.model.subresources.ContentDetails;
 import eu.gillespie.youtubeapi.model.subresources.ThumbnailCollection;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,5 +21,5 @@ public class ActivitySnippet {
     private ActivityType type;
     private String groupId;
     // Todo: update to proper class
-    private Object contentDetails;
+    private ContentDetails contentDetails;
 }

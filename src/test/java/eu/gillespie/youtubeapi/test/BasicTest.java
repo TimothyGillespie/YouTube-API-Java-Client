@@ -26,6 +26,6 @@ class BasicTest {
 
 
         PaginatedActivity result = new YouTubeApiV3(properties.getProperty("api.key")).getActivities();
-        System.out.println(result.getItems().get(0).getSnippet().getThumbnails());
+        System.out.println(result.getItems().get(0));
     }
 }
