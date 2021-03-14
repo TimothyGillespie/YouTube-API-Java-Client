@@ -1,1 +1,4 @@
-/testenv.properties
+*.iml
+target
+.idea
+testenv.properties
