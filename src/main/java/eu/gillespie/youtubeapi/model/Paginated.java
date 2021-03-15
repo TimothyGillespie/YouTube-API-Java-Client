@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 public class Paginated {
 
     // ToDo: update to enumy
-    private String kind;
-    private String etag;
-    private String nextPageToken;
-    private String prevPageToken;
-    private PageInfo pageInfo;
+    protected String kind;
+    protected String etag;
+    protected String nextPageToken;
+    protected String prevPageToken;
+    protected PageInfo pageInfo;
     @Getter(AccessLevel.NONE)
-    private AbstractArray items;
+    protected AbstractArray items;
 
     protected <T> List<T> _getItems(Class<T> type) {
         AbstractMapper mapper = new AbstractMapper();

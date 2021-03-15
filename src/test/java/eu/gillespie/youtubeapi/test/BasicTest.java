@@ -25,7 +25,7 @@ class BasicTest {
 
 
 
-        PaginatedActivity result = new YouTubeApiV3(properties.getProperty("api.key")).getActivities();
-        System.out.println(result.getItems().get(0));
+        PaginatedActivity result = new YouTubeApiV3(properties.getProperty("api.key")).getActivitiesByChannelId("desd");
+        System.out.println(result.toString());
     }
 }
