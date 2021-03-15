@@ -4,7 +4,6 @@ import eu.gillespie.youtubeapi.model.enums.ActivityType;
 import eu.gillespie.youtubeapi.model.subresources.ContentDetails;
 import eu.gillespie.youtubeapi.model.subresources.ThumbnailCollection;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 import java.sql.Timestamp;
