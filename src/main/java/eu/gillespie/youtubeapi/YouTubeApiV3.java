@@ -3,6 +3,9 @@ package eu.gillespie.youtubeapi;
 import eu.gillespie.youtubeapi.model.PaginatedActivity;
 import org.javawebstack.httpclient.HTTPClient;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class YouTubeApiV3 {
 
     private String apiKey;
@@ -27,8 +30,11 @@ public class YouTubeApiV3 {
     }
 
     public int addQuotaCost(int cost) {
-        // ToDo: All Logger here
         this.quotaCostIncurred += cost;
+        Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(
+                Level.INFO,
+                () -> String.format("Quota cost of %d has been added. New total: %d", cost, this.quotaCostIncurred)
+        );
         return this.quotaCostIncurred;
     }
 
