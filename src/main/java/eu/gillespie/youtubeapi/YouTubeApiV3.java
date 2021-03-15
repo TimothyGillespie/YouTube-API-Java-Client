@@ -50,11 +50,10 @@ public class YouTubeApiV3 {
 
     private boolean handleErrorCases(HTTPRequest request) {
 
-        if (!(request.status() >= 200 && request.status() < 200)) {
+        if (!(request.status() >= 200 && request.status() < 300)) {
             Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(
                     Level.SEVERE,
-                    "Request was unsuccessful: {}",
-                    request
+                    "Request was unsuccessful: " + request.toString()
             );
 
             return false;
