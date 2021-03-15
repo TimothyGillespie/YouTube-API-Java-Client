@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @ToString
 public class Paginated {
 
-    // ToDo: update to enumy
+    // ToDo: update to enum when proper mapping works
     protected String kind;
     protected String etag;
     protected String nextPageToken;
