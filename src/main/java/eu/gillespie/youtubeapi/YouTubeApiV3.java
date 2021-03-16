@@ -1,6 +1,7 @@
 package eu.gillespie.youtubeapi;
 
 import eu.gillespie.youtubeapi.model.PaginatedActivity;
+import eu.gillespie.youtubeapi.model.PaginatedCommentThread;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.javawebstack.httpclient.HTTPClient;
@@ -37,6 +38,20 @@ public class YouTubeApiV3 {
             return null;
 
         return response.object(PaginatedActivity.class);
+    }
+
+    public PaginatedCommentThread getCommentThreadsByVideoId(String videoId) {
+        HTTPRequest response = this.client
+                .get("/commentThreads")
+                .query("key", this.apiKey)
+                .query("videoId", videoId)
+                .query("part", "id,snippet,replies")
+                .execute();
+
+        if (!handleErrorCases(response))
+            return null;
+
+        return response.object(PaginatedCommentThread.class);
     }
 
     public int addQuotaCost(int cost) {
