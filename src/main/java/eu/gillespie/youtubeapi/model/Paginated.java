@@ -1,10 +1,13 @@
 package eu.gillespie.youtubeapi.model;
 
+import com.google.gson.annotations.JsonAdapter;
+import eu.gillespie.youtubeapi.model.enums.APIResourceType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;
 import org.javawebstack.abstractdata.AbstractArray;
 import org.javawebstack.abstractdata.AbstractMapper;
+import org.javawebstack.abstractdata.util.GsonEnumAdapter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,8 +16,8 @@ import java.util.stream.Collectors;
 @ToString
 public class Paginated {
 
-    // ToDo: update to enum when proper mapping works
-    protected String kind;
+    @JsonAdapter(GsonEnumAdapter.class)
+    protected APIResourceType kind;
     protected String etag;
     protected String nextPageToken;
     protected String prevPageToken;
